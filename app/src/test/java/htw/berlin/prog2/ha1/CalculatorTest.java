@@ -108,5 +108,23 @@ class CalculatorTest {
 
         assertEquals(expected, actual);
     }
+    // Aufgabe 2
+    // Erster failed Test
+    @Test
+    @DisplayName("should display result after multiplying three positive single-digit numbers")
+    void testMultiplication() {
+        Calculator calc = new Calculator();
 
+        calc.pressDigitKey(7);
+        calc.pressBinaryOperationKey("x");
+        calc.pressDigitKey(7);
+        calc.pressBinaryOperationKey("x");
+        calc.pressDigitKey(5);
+        calc.pressEqualsKey();
+
+        String expected = "245";
+        String actual = calc.readScreen();
+
+        assertEquals(expected, actual);
+    }
 }
