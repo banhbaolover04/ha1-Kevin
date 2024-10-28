@@ -127,4 +127,26 @@ class CalculatorTest {
 
         assertEquals(expected, actual);
     }
+    // 2 Failed Test
+    @Test
+    @DisplayName("should display result after adding two comma positive numbers")
+    void testAdditionComma() {
+        Calculator calc = new Calculator();
+
+        calc.pressDigitKey(0);
+        calc.pressDotKey();
+        calc.pressDigitKey(0);
+        calc.pressDigitKey(1);
+        calc.pressBinaryOperationKey("+");
+        calc.pressDigitKey(0);
+        calc.pressDotKey();
+        calc.pressDigitKey(0);
+        calc.pressDigitKey(5);
+        calc.pressEqualsKey();
+
+        String expected = "0.06";
+        String actual = calc.readScreen();
+
+        assertEquals(expected, actual);
+    }
 }
